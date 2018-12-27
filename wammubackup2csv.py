@@ -16,7 +16,6 @@ import configparser
 import re
 
 encoding = 'utf-8-sig'
-#encoding = locale.getpreferredencoding()
 
 if len(sys.argv) < 2:
     exit('usage: ' + sys.argv[0] + ' <inputfile>')
@@ -41,7 +40,7 @@ for i in config.sections():
             #if j.startswith('entry') and j.endswith('type'):
             if re.match(r"^entry\d\dtype$", j):
                 entrytype = config[i][j]
-                entrytext = config[i][re.sub(r"type$", 'text', j)][1:-1]    # TODO
+                entrytext = config[i][re.sub(r"type$", 'text', j)][1:-1] # TODO
                 
                 if entrytype == 'Name':
                     cname = entrytext

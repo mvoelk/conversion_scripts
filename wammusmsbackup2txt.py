@@ -17,7 +17,6 @@ import time
 import re
 
 encoding = 'utf-8-sig'
-#encoding = locale.getpreferredencoding()
 
 if len(sys.argv) < 2:
     exit('usage: ' + sys.argv[0] + ' <inputfile>')

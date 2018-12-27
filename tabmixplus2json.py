@@ -4,7 +4,7 @@
 # JSON (Tab Session Manager by sienori).
 #
 # usage: ./tabmixplus2tabsessionmanager.py session.rdf
-#        outputs 'session.json'
+# output: session.json
 #
 # author: Markus Völk
 # date: 2017-12-25
@@ -53,7 +53,7 @@ sessions = []
 
 # sessions
 for s in g.seq(rdflib.URIRef('rdf://tabmix/windows')):
-    if g.seq(s) is None: continue # minimal
+    if g.seq(s) is None: continue # for minimal test RDF
     #print(g.value(s, NC.name))
     #print(g.value(s, NC.nameExt))
     
@@ -81,7 +81,7 @@ for s in g.seq(rdflib.URIRef('rdf://tabmix/windows')):
         
         # tabs
         for t in g.seq(g.value(w, NC.tabs)):
-            if g.value(t, NC.properties) is None: continue # minimal
+            if g.value(t, NC.properties) is None: continue # for minimal test RDF
             #print(g.value(t, NC.image))
             #print(g.value(t, NC.properties))
             #print(g.value(t, NC.history))
